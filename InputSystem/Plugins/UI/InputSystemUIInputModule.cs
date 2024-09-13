@@ -2284,10 +2284,9 @@ namespace UnityEngine.InputSystem.UI
                 ? ep.uiToolkitPointerId
                 : base.ConvertUIToolkitPointerId(sourcePointerData);
         }
-
 #endif
 
-#if UNITY_INPUT_SYSTEM_INPUT_MODULE_SCROLL_DELTA
+/*#if UNITY_INPUT_SYSTEM_INPUT_MODULE_SCROLL_DELTA
         const float kSmallestScrollDeltaPerTick = 0.00001f;
         public override Vector2 ConvertPointerEventScrollDeltaToTicks(Vector2 scrollDelta)
         {
@@ -2297,7 +2296,7 @@ namespace UnityEngine.InputSystem.UI
             return scrollDelta / scrollDeltaPerTick;
         }
 
-#endif
+#endif*/
 
         private void HookActions()
         {
@@ -2470,16 +2469,16 @@ namespace UnityEngine.InputSystem.UI
 
         [NonSerialized] private GameObject m_LocalMultiPlayerRoot;
 
-#if UNITY_INPUT_SYSTEM_SENDPOINTERHOVERTOPARENT
+/*#if UNITY_INPUT_SYSTEM_SENDPOINTERHOVERTOPARENT
         // Needed for testing.
         internal new bool sendPointerHoverToParent
         {
             get => base.sendPointerHoverToParent;
             set => base.sendPointerHoverToParent = value;
         }
-#else
+#else*/
         private bool sendPointerHoverToParent => true;
-#endif
+// #endif
 
         /// <summary>
         /// Controls the origin point of raycasts when the cursor is locked.
